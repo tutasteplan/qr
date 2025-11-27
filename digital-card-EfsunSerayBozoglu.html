@@ -74,7 +74,10 @@
         #splash.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
         
         #splash img { 
-            width: 100%; height: 40%; 
+            /* Splash ayarlarını optimize ettim: */
+            width: 80%; 
+            height: auto; 
+            max-height: 50vh;
             object-fit: contain; 
             animation: pulse 0.85s infinite; 
         }
@@ -132,14 +135,19 @@
             transition: all 0.2s; 
             box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            
+            /* TIKLANABİLİRLİK İÇİN GÜVENLİK AYARLARI */
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
         }
 
-        /* --- YENİ EKLENEN İKON STİLİ --- */
+        /* --- İKON STİLİ --- */
         .btn svg {
             width: 20px;
             height: 20px;
-            margin-right: 2px; /* İkon ile yazı arası boşluk */
-            fill: currentColor; /* Yazı rengini alır */
+            margin-right: 2px;
+            fill: currentColor;
             flex-shrink: 0;
         }
 
@@ -228,7 +236,7 @@
                         https://www.tutasteplanlama.com.tr
                     </a>
 
-                    <a href="mailto:efsun@tutasteplanlama.com.tr" target="_self" class="btn">
+                    <a href="mailto:efsun@tutasteplanlama.com.tr" class="btn">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
                         efsun@tutasteplanlama.com.tr
                     </a>
