@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#02040A">
     <title>MURAT KAHRAMAN - Holografik Dijital Kartvizit</title>
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* SIFIRLAMA & GENEL AYARLAR */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; margin: 0; padding: 0; }
 
         html, body {
@@ -24,6 +26,7 @@
             perspective: 1200px;
         }
 
+        /* ARKA PLAN DESENLERİ */
         .bg-pattern {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -35,6 +38,7 @@
             filter: invert(1);
         }
 
+        /* HOLOGRAM IZGARASI */
         .c23-cyber-grid {
             position: fixed;
             bottom: -30%;
@@ -51,6 +55,7 @@
             z-index: 1;
         }
 
+        /* SPLASH EKRANI */
         #splash {
             position: fixed; 
             inset: 0; 
@@ -74,6 +79,7 @@
             50% { transform: scale(1.05); filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.7)); } 
         }
 
+        /* ANA KAPSAYICI */
         .container { 
             width: 100%;
             max-width: 500px; 
@@ -88,8 +94,8 @@
             transform-style: preserve-3d;
         }
 
+        /* İÇERİK GEÇİŞİ */
         #content { 
-            width: 100%;
             opacity: 0; 
             transform: translateY(40px) translateZ(0); 
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
@@ -97,14 +103,10 @@
         }
         #content.visible { opacity: 1; transform: translateY(0) translateZ(0); }
 
+        /* BAŞLIK ALANI */
         .header { 
             text-align: center; 
             margin-bottom: 35px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
             transform: translateZ(30px);
             transform-style: preserve-3d;
         }
@@ -157,14 +159,6 @@
             border: 1px solid rgba(56, 189, 248, 0.3);
         }
         
-        .name-glitch-wrap {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            animation: cyber-glitch 4.5s infinite;
-        }
-
         .name { 
             position: relative;
             font-size: 28px; 
@@ -176,25 +170,22 @@
             text-shadow: 0 0 15px rgba(56, 189, 248, 0.5), 0 10px 30px rgba(0,0,0,0.8);
             display: inline-block;
             overflow: hidden;
-            max-width: 100%;
-            text-align: center;
         }
 
         .name::after {
             content: '';
             position: absolute;
-            top: 0; left: -120%;
+            top: 0; left: -100%;
             width: 60%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), rgba(56, 189, 248, 0.9), transparent);
             transform: skewX(-25deg);
             animation: laser-sweep 8s infinite cubic-bezier(0.19, 1, 0.22, 1);
-            pointer-events: none;
         }
 
         @keyframes laser-sweep {
-            0%, 60% { left: -120%; }
-            100% { left: 220%; }
+            0%, 60% { left: -100%; }
+            100% { left: 200%; }
         }
 
         @keyframes cyber-glitch {
@@ -204,14 +195,19 @@
             99% { transform: translate(0px, 2px); opacity: 1; }
         }
 
-        .title { 
-            font-size: 13px; 
-            color: #94a3b8; 
-            font-weight: 600; 
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
+        .name-glitch-wrap {
+            display: inline-block;
+            animation: cyber-glitch 4.5s infinite;
         }
 
+        .title { 
+            font-size: 14px; 
+            color: #94a3b8; 
+            font-weight: 600; 
+            letter-spacing: 1px;
+        }
+
+        /* 3D HOLOGRAFİK LİNK KARTLARI */
         .links-grid {
             display: flex;
             flex-direction: column;
@@ -348,6 +344,7 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.8);
         }
 
+        /* KAYAN YAZI */
         .footer-ticker {
             position: fixed;
             bottom: 0;
